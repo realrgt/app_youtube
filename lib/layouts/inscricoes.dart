@@ -8,6 +8,15 @@ class Inscricoes extends StatefulWidget {
 class _InscricoesState extends State<Inscricoes> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      child: Center(
+        child: Text(
+          "Inscrições",
+          style: TextStyle(
+              fontSize: 25
+          ),
+        ),
+      ),
+    );
   }
 }
