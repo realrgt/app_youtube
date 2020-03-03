@@ -6,6 +6,16 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
+  int _indiceAtual = 0;
+
+  List<Widget> telas = [
+    Text("Início"),
+    Text("Em alta"),
+    Text("Incrições"),
+    Text("Biblioteca")
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,7 +57,35 @@ class _HomeState extends State<Home> {
           )
         ],
       ),
-      body: Container(),
+      body: telas[ _indiceAtual ],
+      bottomNavigationBar: BottomNavigationBar(
+        onTap: (index){
+          setState(() {
+            this._indiceAtual = index;
+          });
+        },
+        currentIndex: this._indiceAtual,
+        type: BottomNavigationBarType.fixed,
+        fixedColor: Colors.red,
+        items: [
+          BottomNavigationBarItem(
+            title: Text("Inicio"),
+            icon: Icon(Icons.home)
+          ),
+          BottomNavigationBarItem(
+            title: Text("Em alta"),
+            icon: Icon(Icons.whatshot)
+          ),
+          BottomNavigationBarItem(
+            title: Text("Inscrições"),
+            icon: Icon(Icons.subscriptions)
+          ),
+          BottomNavigationBarItem(
+            title: Text("Biblioteca"),
+            icon: Icon(Icons.folder)
+          )
+        ],
+      ),
     );
   }
 }
