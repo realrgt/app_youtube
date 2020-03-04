@@ -1,6 +1,9 @@
 # Assets
 /images/
 
+# ApiKeys
+/lib/layouts/api.dart
+
 # Miscellaneous
 *.class
 *.log
