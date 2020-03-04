@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_youtube/flutter_youtube.dart';
+
+// custom imports
 import 'package:youtube/custom-search-delegate.dart';
 import 'package:youtube/layouts/biblioteca.dart';
 import 'package:youtube/layouts/em-alta.dart';
@@ -12,13 +15,15 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
+  String _resultado = "";
+
   int _indiceAtual = 0;
 
   @override
   Widget build(BuildContext context) {
 
     List<Widget> telas = [
-      Inicio(),
+      Inicio( _resultado ),
       EmAlta(),
       Inscricoes(),
       Biblioteca()
@@ -41,6 +46,11 @@ class _HomeState extends State<Home> {
             icon: Icon(Icons.search),
             onPressed: () async {
               String res = await showSearch(context: context, delegate: CustomSearchDelegate());
+
+              setState(() {
+                _resultado = res;
+              });
+
               print("resultado: digitado " + res );
             },
           ),

@@ -1,5 +1,5 @@
 # youtube
-//const CHAVE_YOUTUBE_API = "AIzaSyCzwe_f0c2KdqRZvgrSCeaP4bnk5-0D78Q";
+
 A new Flutter application.
 
 ## Getting Started
